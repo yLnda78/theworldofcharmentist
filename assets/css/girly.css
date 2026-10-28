@@ -1,0 +1,112 @@
+/* ===== GIRLY THEME — pink / cream / sticker style (override layer) ===== */
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Caveat+Brush&family=Quicksand:wght@400;500;600;700&display=swap');
+:root{
+  --pink:#f7a8d0; --pink-2:#fbd0e5; --hot:#e8348f; --plum:#5c1a45;
+  --teal:#26d9c8; --amber:#fbbf55; --lilac:#cfb5f2; --butter:#fffbd6;
+  --black:var(--plum); --dark:var(--plum); --brown:var(--plum);
+  --cream:var(--butter); --cream-2:var(--pink-2); --paper:var(--butter);
+  --line:var(--plum); --text:#4a1738; --muted:#a05b86; --gold:var(--hot);
+  --serif:'Caprasimo','Georgia',serif; --sans:'Quicksand',Arial,sans-serif;
+  --script:'Caveat Brush','Comic Sans MS',cursive;
+}
+body{font-weight:500; background-color:var(--butter);
+  background-image:radial-gradient(rgba(247,168,208,.35) 2px,transparent 2.5px); background-size:26px 26px;}
+h1,h2,h3,.serif{font-weight:400; letter-spacing:0;}
+.section-title,h2.serif{font-family:var(--script); font-size:clamp(2.2rem,4.6vw,3.4rem); color:var(--plum); line-height:1.05;}
+.body-text .lede{font-family:var(--script); font-size:1.5rem; color:var(--hot);}
+::selection{background:var(--hot); color:#fff;}
+
+/* buttons = chunky stickers */
+.btn,.link-arrow{border-radius:999px; text-transform:none; letter-spacing:.02em; font-size:.95rem; font-weight:700;
+  border:3px solid var(--plum); padding:13px 30px; box-shadow:4px 4px 0 var(--plum); transition:transform .15s, box-shadow .15s;}
+.btn:hover,.link-arrow:hover{transform:translate(3px,3px); box-shadow:1px 1px 0 var(--plum);}
+.btn-dark,.btn-light{background:var(--hot); color:#fff; border-color:var(--plum);}
+.btn-dark:hover,.btn-light:hover{background:var(--hot); color:#fff;}
+.btn-outline{background:var(--butter); color:var(--plum); border-color:var(--plum);}
+.btn-outline:hover{background:var(--teal); color:var(--plum);}
+.link-arrow{display:inline-block; background:var(--amber); color:var(--plum);}
+
+/* header */
+#site-header,#site-header.on-light,#site-header.is-scrolled{
+  background:var(--pink); color:var(--plum); border-bottom:3px solid var(--plum); backdrop-filter:none;}
+#site-header:not(.on-light):not(.is-scrolled) .cart-count span{color:#fff;}
+.logo{font-family:var(--serif); letter-spacing:.02em; color:var(--hot); -webkit-text-stroke:1px var(--plum);
+  text-shadow:2px 2px 0 var(--plum); font-size:1.6rem;}
+nav.main-nav a{font-weight:700; letter-spacing:.02em;}
+nav.main-nav a:hover{color:var(--hot);}
+
+/* hero: pink wash + wavy bottom edge */
+.hero{position:relative;}
+.hero::before{content:""; position:absolute; inset:0; z-index:0;
+  background:linear-gradient(180deg,rgba(232,52,143,.28),rgba(92,26,69,.55));}
+.hero::after{content:""; position:absolute; left:0; right:0; bottom:-1px; height:26px; z-index:1;
+  background:radial-gradient(circle at 20px 0,transparent 19px,var(--butter) 20px) 0 0/40px 26px repeat-x;}
+.hero .hero-inner{position:relative; z-index:2;}
+.hero-title{font-family:var(--serif); color:#fff; -webkit-text-stroke:2px var(--plum); text-shadow:5px 5px 0 var(--plum); letter-spacing:.02em;}
+.hero-sub{color:#fff; font-weight:600; font-size:1rem;}
+
+/* marquee strip */
+.marquee{background:var(--plum); color:var(--pink); overflow:hidden; white-space:nowrap; padding:12px 0; border-block:3px solid var(--plum);}
+.marquee div{display:inline-block; padding-left:100%; animation:marq 26s linear infinite; font-weight:700; letter-spacing:.14em; font-size:.8rem;}
+@keyframes marq{to{transform:translateX(-100%);}}
+@media (prefers-reduced-motion:reduce){.marquee div{animation:none; padding-left:0;}}
+
+/* eyebrows become tape labels */
+.eyebrow{display:inline-block; font-family:var(--script); font-size:1.25rem; letter-spacing:.02em; text-transform:none;
+  background:var(--amber); color:var(--plum); padding:3px 16px; transform:rotate(-2deg); border-radius:4px; margin-bottom:18px;}
+.text-center .eyebrow,.eyebrow.text-center{transform:rotate(2deg);}
+
+/* tabs as pills */
+.tab-bar{border:0; gap:10px; flex-wrap:wrap; padding-bottom:0;}
+.tab-bar a{border:3px solid var(--plum); border-radius:999px; padding:7px 20px; background:#fff; color:var(--plum); font-weight:700; text-transform:none; letter-spacing:.02em;}
+.tab-bar a.active,.tab-bar a:hover{background:var(--hot); color:#fff;}
+
+/* collection tiles = polaroid stickers */
+.tile{background:#fff; border:3px solid var(--plum); border-radius:18px; padding:14px 14px 20px; box-shadow:6px 6px 0 var(--plum);
+  transition:transform .2s; text-align:center;}
+.tile:nth-child(odd){transform:rotate(-1.2deg);} .tile:nth-child(even){transform:rotate(1.2deg);}
+.tile:hover{transform:rotate(0) translateY(-4px);}
+.tile .tile-img{border:3px solid var(--plum); border-radius:12px; background:var(--pink-2);}
+.tile h4{font-family:var(--script); font-size:1.7rem; color:var(--plum);}
+.tile p{color:var(--muted); font-weight:600;}
+.tile .tile-link,.tile:hover .tile-link{display:inline-block; background:var(--teal); color:var(--plum); border:2px solid var(--plum);
+  border-radius:999px; padding:5px 14px; text-transform:none; letter-spacing:.02em; font-size:.85rem; font-weight:700; opacity:1;}
+
+/* info cards = colored sticky notes */
+.idx-card{border:3px solid var(--plum); border-radius:14px; padding:26px; box-shadow:6px 6px 0 var(--plum); background:var(--teal); color:var(--plum);}
+.idx-card:nth-child(2){background:var(--amber); transform:rotate(1.2deg);} .idx-card:nth-child(3){background:var(--lilac); transform:rotate(-1deg);}
+.idx-card:nth-child(1){transform:rotate(-1.2deg);}
+.idx-card h4{font-family:var(--script); font-size:1.7rem; margin:6px 0 8px;}
+.idx-card p{color:var(--plum); font-weight:600;}
+.idx-num{font-family:var(--script); font-size:1.1rem; background:#fff; border:2px solid var(--plum); border-radius:999px; padding:2px 12px;}
+.panel{border:3px solid var(--plum); border-radius:16px; background:var(--pink-2); box-shadow:6px 6px 0 var(--plum);}
+.grid-2 .panel:nth-child(2){background:var(--lilac);}
+.panel h3{font-family:var(--script); font-size:1.8rem !important;}
+
+/* images get sticker frames */
+.grid-3 img,.grid-2 > img{border:3px solid var(--plum); border-radius:16px; box-shadow:6px 6px 0 var(--plum);}
+
+/* process steps */
+.pstep .dot{background:var(--hot); color:#fff; border:3px solid var(--plum); border-radius:50%; font-family:var(--script);}
+.pstep h5{font-family:var(--script); font-size:1.4rem;}
+
+/* pink band with scalloped top */
+.dark-band{position:relative; background:var(--pink); color:var(--plum); padding-block:90px;}
+.dark-band::before{content:""; position:absolute; top:-1px; left:0; right:0; height:24px;
+  background:radial-gradient(circle at 20px 0,var(--butter) 19px,transparent 20px) 0 0/40px 24px repeat-x;}
+.dark-band .section-title{font-size:clamp(2.6rem,6vw,4.5rem); color:var(--hot); -webkit-text-stroke:1px var(--plum); text-shadow:3px 3px 0 var(--plum);}
+
+/* forms */
+.newsletter input,input,select,textarea{border:3px solid var(--plum) !important; border-radius:999px; background:#fff; color:var(--plum);}
+textarea{border-radius:18px;}
+.newsletter button{background:var(--hot) !important; color:#fff !important; border:3px solid var(--plum); border-radius:999px; font-weight:700; text-transform:none; letter-spacing:.02em; font-size:.95rem;}
+
+/* footer */
+#site-footer{position:relative; background:var(--pink); color:var(--plum); margin-top:30px; border-top:3px solid var(--plum);}
+#site-footer::before{content:""; position:absolute; top:-28px; left:0; right:0; height:26px;
+  background:radial-gradient(circle at 20px 26px,var(--pink) 19px,transparent 20px) 0 0/40px 26px repeat-x;}
+.footer-brand p,.footer-signup p,.footer-col a,.footer-trust a,.footer-bottom,.footer-bottom *{color:var(--plum) !important; opacity:1;}
+.footer-col h5{color:var(--hot) !important; font-family:var(--script); font-size:1.3rem; text-transform:none; letter-spacing:.02em;}
+.footer-col a:hover{color:var(--hot) !important;}
+.footer-social a{border:2px solid var(--plum); color:var(--plum); background:#fff;}
+.footer-brand .logo{color:var(--hot);}
